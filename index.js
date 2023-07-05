@@ -15,6 +15,7 @@ async function run() {
         
         obj = filterByPrice(obj) ? obj : null;
         obj = filterByPosition(obj) ? obj : null;
+        obj = filterByClub(obj) ? obj : null;
 
         final.push(obj); 
         
@@ -61,6 +62,16 @@ function filterByPosition(obj) {
     if (filter) {
         const pos = filter.split('=')[1]
         return obj && obj.position === pos;
+    }
+
+    return true;
+}
+
+function filterByClub(obj) {
+    const filter = process.argv.find(o => o.startsWith('--club'))
+    if (filter) {
+        const club = filter.split('=')[1]
+        return obj && obj.club === club;
     }
 
     return true;

@@ -27,6 +27,11 @@ Compile with position filter
 node index --position=MID
 ```
 
+Compile with club filter
+```
+node index --club=MUN
+```
+
 You can also combine all of those filters like this
 ```
 node index --price=5 --position=FWD 
